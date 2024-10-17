@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:smart_fert/utils/theme/constants/colors.dart';
-import 'package:smart_fert/utils/theme/constants/sizes.dart';
-import 'package:smart_fert/utils/theme/device/device_utils.dart';
-import 'package:smart_fert/utils/theme/helper_functions/helper_functions.dart';
 
-
-
+import '../../utils/theme/device/device_utils.dart';
+import '../../utils/theme/helper_functions/helper_functions.dart';
 
 class EAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const EAppBar(
-      {super.key,
-        this.title,
-        this.showBackArrow = false,
-        this.leadingIcon,
-        this.leadingIconColor,
-        this.actions,
-        this.leadingOnPressed, this.leadingIconSize});
+  const EAppBar({
+    super.key,
+    this.title,
+    this.showBackArrow = false,
+    this.leadingIcon,
+    this.leadingIconColor,
+    this.actions,
+    this.leadingOnPressed,
+    this.leadingIconSize,
+    this.precedingIcon, // Added preceding icon
+    this.precedingOnPressed, // Added preceding button action
+    this.precedingIconColor,
+  });
 
   final Widget? title;
   final bool showBackArrow;
@@ -27,36 +27,53 @@ class EAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
 
+  // New preceding icon and its properties
+  final IconData? precedingIcon;
+  final VoidCallback? precedingOnPressed;
+  final Color? precedingIconColor;
+
   @override
   Widget build(BuildContext context) {
     final dark = EHelperFunctions.isDarkMode(context);
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: ESizes.md,
-      ),
-      child: AppBar(
-        automaticallyImplyLeading: false,
-        leading: showBackArrow
-            ? IconButton(
-            onPressed: () => Get.back(),
-            icon: Icon(
-              Iconsax.arrow_left,
-              color: dark ? EColors.white : EColors.dark,
-            ))
-            : leadingIcon != null
-            ? IconButton(
-          onPressed: leadingOnPressed,
-          icon: Icon(leadingIcon, color: leadingIconColor, size: leadingIconSize,),
-        )
-            : null,
+    return AppBar(
+      backgroundColor: Colors.green,
+      automaticallyImplyLeading: false,
+      scrolledUnderElevation: 0,
+      leading: showBackArrow
+          ? IconButton(
+        onPressed: (){},
+        icon: const Icon(
+          Iconsax.arrow_left,
+          color: Colors.white,
+        ),
+      )
+          : leadingIcon != null
+          ? IconButton(
+        onPressed: leadingOnPressed,
+        icon: Icon(
+          leadingIcon,
+          color: leadingIconColor,
+          size: leadingIconSize,
+        ),
+      )
+          : null,
 
-        title: title,
-        actions: actions,
-      ),
+      title: title,
+
+      actions: [
+        if (actions != null) ...actions!, // Other action buttons (if any)
+        if (precedingIcon != null) // Preceding icon on the right
+          IconButton(
+            onPressed: precedingOnPressed,
+            icon: Icon(
+              precedingIcon,
+              color: precedingIconColor ?? (dark ? Colors.white : Colors.black),
+            ),
+          ),
+      ],
     );
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(EDeviceUtils.getAppBarHeight());
 }

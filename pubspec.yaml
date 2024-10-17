@@ -42,6 +42,13 @@ dependencies:
   iconsax: any
   fl_chart: any
   smooth_page_indicator: any
+  lottie: any
+  syncfusion_flutter_charts: any
+  http: any
+  geolocator: any
+  geocoding: any
+  shimmer: any
+  google_fonts: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -54,6 +61,15 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   intl:
   url_launcher:
+  http:
+  geolocator:
+  geocoding:
+  lottie:
+  syncfusion_flutter_charts:
+  google_fonts:
+  shimmer:
+  charts_flutter:
+  fl_chart:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -67,8 +83,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-#  assets:
-#    - assets/images
+  assets:
+    - assets/animations/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

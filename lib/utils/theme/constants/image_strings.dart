@@ -127,4 +127,24 @@ class EImages {
       "assets/icons/payment_methods/payment_no_bg.png";
   static const String img =
       "assets/images/bg_image.jpeg";
+  static const String clearsky = "assets/animations/sunny.json";
+  static const String overcast = "assets/animations/cloud.json";
+  static const String partlycloudy = "assets/animations/partly_cloudy.json";
+  static const String mainlyclear = "assets/animations/overcast_fin.json";
+  static const String fog = "assets/animations/fog.json";
+  static const String lightrain = "assets/animations/rain.json";
+  static const String moderaterain = "assets/animations/rain.json";
+  static const String heavyrain = "assets/animations/thunder.json";
+  static const String showers = "assets/animations/rain.json";
+  static const String thunderstorm = "assets/animations/thunderstorm.json";
+  static const String snowflurries = "assets/animations/light_snow.json";
+  static const String lightsnow = "assets/animations/light_snow.json";
+  static const String moderatesnow = "assets/animations/light_snow.json";
+  static const String heavysnow = "assets/animations/heavy_snow.json";
+  static const String loader = "assets/animations/loader_weather.json";
+
+  static const String clearskynight = "assets/animations/clear_night.json";
+  static const String partlycloudynight = "assets/animations/partly_cloudy_night.json";
+  static const String lightrainnight = "assets/animations/rainy_night.json";
+  static const String moderaterainnight = "assets/animations/rainy_night.json";
 }

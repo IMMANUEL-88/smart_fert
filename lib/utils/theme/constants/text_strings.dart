@@ -27,7 +27,7 @@ class ETexts {
   static const String username = "Username";
   static const String phoneNo = "Phone Number";
   static const String rememberMe = "Remember Me";
-  static const String forgetPassword = "Forget Password?";
+  static const String forgetPassword = "Forgot Password?";
   static const String signIn = "Sign In";
   static const String createAccount = "Create Account";
   static const String orSignInWith = "or sign in with";
@@ -43,7 +43,7 @@ class ETexts {
 // -- Authentication Headings Text
   static const String loginTitle = "Welcome back,";
   static const String loginSubTitle =
-      "Discover Limitless Choices and Unmatched Convenience.";
+      "Welcome to Ferti Optimizer! Log in to access smart insights and optimize your farming.";
   static const String signupTitle = "Let's create your account";
   static const String forgetPasswordTitle = "Forget password";
   static const String forgetPasswordSubTitle =
@@ -63,4 +63,5 @@ class ETexts {
   static const String tcontinue = "Continue";
   static const String sumbit = "Sumbit";
   static const String done = "Done";
+  static const String supportText1 = "Support @ it.fertioptimizer@gmail.com";
 }

@@ -7,7 +7,7 @@ void main() {
   // Set the navigation bar color
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      systemNavigationBarColor: Color(0xFF70BE92), // Custom color for navigation bar
+      systemNavigationBarColor: Colors.green, // Custom color for navigation bar
       systemNavigationBarIconBrightness: Brightness.light, // Adjust icons for better visibility
     ),
   );
